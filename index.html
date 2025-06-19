@@ -1,9 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>N.O.M.C_V3.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: black;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header-text {
+      text-align: center;
+      margin-top: 8vh;
+      margin-bottom: 3vh;
+      max-height: 20vh;
+      width: 90vw;
+    }
+    .header-text h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.1;
+    }
+    .header-text p {
+      margin: 0.5rem 0 0 0;
+      font-size: clamp(1rem, 3vw, 2rem);
+      opacity: 0.85;
+    }
+
+    /* Image gallery container */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      width: 90vw;
+      max-width: 1000px;
+      margin-bottom: 3vh;
+      background-color: #111;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    /* Each image container */
+    .image-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Clickable images */
+    .image-item a {
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .image-item a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Images */
+    .image-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      user-select: none;
+    }
+
+    /* Captions below images */
+    .image-caption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #ddd;
+      user-select: none;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .header-text {
+        margin-top: 5vh;
+        max-height: 25vh;
+      }
+      .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.8rem;
+      }
+    }
+  </style>
 </head>
-<body style="margin: 0%; padding: 0%;"><iframe allowtransparency="true"; style="object-fit: cover; position: fixed; border: none; width: 100vw; height: 100vh; padding: 0%; margin: 0%;" src="https://adilo.bigcommand.com/watch/kamF0P31 "  frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen scrolling="yes"></iframe>
+<body>
+  <div class="header-text">
+    <h1>N.O.M.C</h1>
+    <p>Noah's Own Movie Center</p>
+  </div>
+
+  <div class="image-gallery">
+    <div class="image-item">
+      <a href="Iron-Man.html" target="_self" rel="noopener">
+        <img src="Iron-Man.jpg" alt="Iron-Man" />
+      </a>
+      <p class="image-caption">Iron-Man</p>
+    </div>
+    <div class="image-item">
+      <a href="movie2.html" target="_self" rel="noopener">
+        <img src="https://picsum.photos/id/1012/400/300" alt="Mountain Lake" />
+      </a>
+      <p class="image-caption">Mountain Lake</p>
+    </div>
+    <div class="image-item">
+      <a href="movie3.html" target="_self" rel="noopener">
+        <img src="https://picsum.photos/id/1015/400/300" alt="City Skyline" />
+      </a>
+      <p class="image-caption">City Skyline</p>
+    </div>
+    <div class="image-item">
+      <a href="movie4.html" target="_self" rel="noopener">
+        <img src="https://picsum.photos/id/1016/400/300" alt="Desert Dunes" />
+      </a>
+      <p class="image-caption">Desert Dunes</p>
+    </div>
+    <div class="image-item">
+      <a href="movie5.html" target="_self" rel="noopener">
+        <img src="https://picsum.photos/id/1020/400/300" alt="Ocean View" />
+      </a>
+      <p class="image-caption">Ocean View</p>
+    </div>
+    <div class="image-item">
+      <a href="movie6.html" target="_self" rel="noopener">
+        <img src="https://picsum.photos/id/1021/400/300" alt="Snowy Mountains" />
+      </a>
+      <p class="image-caption">Snowy Mountains</p>
+    </div>
+  </div>
 </body>
 </html>
