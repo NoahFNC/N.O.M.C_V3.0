@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search Results - N.O.M.C</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .results-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .result-item {
+      background-color: #111;
+      border-radius: 10px;
+      padding: 0.75rem;
+      max-width: 220px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(255,255,255,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .result-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+    }
+
+    .result-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .caption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      user-select: none;
+    }
+
+    @media (max-width: 500px) {
+      .result-item {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Search Results</h1>
+  <div class="results-container" id="results"></div>
+
+  <script>
+    const movies = [
+      { title: "Iron-Man", keywords: ["Iron", "Man", "-"], image: "Iron-Man.jpg", link: "Iron-Man.html" },
+      { title: "Iron-Man 2", keywords: ["Iron", "Man", "-", "2"], image: "Iron-Man 2.jpg", link: "Iron-Man 2.html" },
+      { title: "City Skyline", keywords: ["city", "skyline", "urban"], image: "https://picsum.photos/id/1015/400/300", link: "movie3.html" },
+      { title: "Desert Dunes", keywords: ["desert", "sand", "dunes"], image: "https://picsum.photos/id/1016/400/300", link: "movie4.html" },
+      { title: "Ocean View", keywords: ["ocean", "sea", "waves"], image: "https://picsum.photos/id/1020/400/300", link: "movie5.html" },
+      { title: "Snowy Mountains", keywords: ["snow", "mountains", "cold"], image: "https://picsum.photos/id/1021/400/300", link: "movie6.html" }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("query")?.toLowerCase();
+
+    const results = movies.filter(movie =>
+      movie.title.toLowerCase().includes(query) ||
+      movie.keywords.some(kw => kw.includes(query))
+    );
+
+    const container = document.getElementById("results");
+
+    if (results.length === 0) {
+      container.innerHTML = `<p>No results found for "<strong>${query}</strong>".</p>`;
+    } else {
+      results.forEach(movie => {
+        container.innerHTML += `
+          <div class="result-item">
+            <a href="${movie.link}">
+              <img src="${movie.image}" alt="${movie.title}" />
+            </a>
+            <div class="caption">${movie.title}</div>
+          </div>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>
