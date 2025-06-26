@@ -75,14 +75,15 @@
   <script>
     // Sample film data
     const films = [
-      { title: "Iron-Man", keywords: ["iron man"], thumb: "Iron-Man.jpg", source: "https://adilo.bigcommand.com/watch/kamF0P31"},
-      { title: "The Incredible Hulk", keywords: ["the incredible hulk"], thumb: "The Incredible Hulk.jpg", source: "https://adilo.bigcommand.com/watch/hWfzr5g7"},
-      { title: "Iron-Man 2", keywords: ["iron man 2"], thumb: "Iron-Man 2.jpg", source: "https://adilo.bigcommand.com/watch/8GgrFjZi"},
-      { title: "Thor", keywords: ["thor"], thumb: "Thor.jpg", source: "https://adilo.bigcommand.com/watch/YLTs5vT_"},
-      { title: "The Batman", keywords: ["the batman"], thumb: "The Batman 2022.jpg", source: "https://adilo.bigcommand.com/watch/FH1cKejq"},
-      { title: "The Amazing Spider-Man", keywords: ["the amazing spider man"], thumb: "The Amazing Spider-Man.jpg", source: "https://adilo.bigcommand.com/watch/2ms84cBj"},
-      { title: "Scream", keywords: ["scream"], thumb: "Scream 1.jpg", source: "https://adilo.bigcommand.com/watch/0AYqWb9o"},
-      { title: "Pineapple Express", keywords: ["pineapple express"], thumb: "Pineapple Express.jpg", source: "https://adilo.bigcommand.com/watch/gq1sBlv4"},
+      { type: "movie", title: "Iron-Man", keywords: ["iron man"], thumb: "Iron-Man.jpg", source: "https://adilo.bigcommand.com/watch/kamF0P31"},
+      { type: "movie", title: "The Incredible Hulk", keywords: ["the incredible hulk"], thumb: "The Incredible Hulk.jpg", source: "https://adilo.bigcommand.com/watch/hWfzr5g7"},
+      { type: "movie", title: "Iron-Man 2", keywords: ["iron man 2"], thumb: "Iron-Man 2.jpg", source: "https://adilo.bigcommand.com/watch/8GgrFjZi"},
+      { type: "movie", title: "Thor", keywords: ["thor"], thumb: "Thor.jpg", source: "https://adilo.bigcommand.com/watch/YLTs5vT_"},
+      { type: "movie", title: "The Batman", keywords: ["the batman"], thumb: "The Batman 2022.jpg", source: "https://adilo.bigcommand.com/watch/FH1cKejq"},
+      { type: "movie", title: "The Amazing Spider-Man", keywords: ["the amazing spider man"], thumb: "The Amazing Spider-Man.jpg", source: "https://adilo.bigcommand.com/watch/2ms84cBj"},
+      { type: "movie", title: "Scream", keywords: ["scream"], thumb: "Scream 1.jpg", source: "https://adilo.bigcommand.com/watch/0AYqWb9o"},
+      { type: "movie", title: "Pineapple Express", keywords: ["pineapple express"], thumb: "Pineapple Express.jpg", source: "https://adilo.bigcommand.com/watch/gq1sBlv4"},
+      { type: "show", title: "Gotham", keywords: ["gotham"], thumb: "Gotham.jpg", showFile: "Gotham.html"},
 
       
       // Add more films here
@@ -107,9 +108,16 @@
           <div class="caption">${film.title}</div>
         `;
         div.onclick = () => {
-          localStorage.setItem("GLOBAL_SRC", film.source);
-          localStorage.setItem("documentName", film.title)
-          window.location.href = "Movie.html";
+          if(film.type === "movie"){
+            localStorage.setItem("GLOBAL_SRC", film.source);
+            localStorage.setItem("documentName", film.title)
+            window.location.href = "Movie.html";
+          }
+          else if(film.type === "show"){
+            window.location.href = film.showFile
+          
+          }
+         
         };
         container.appendChild(div);
       });
