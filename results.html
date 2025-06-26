@@ -2,69 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Search Results - N.O.M.C</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Results – N.O.M.C</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
-  <link rel="icon" href="NOMC Logo.ico" type="image/ico">
   <style>
     body {
-      background-color: black;
+      background-color: #000;
       color: white;
       font-family: 'Orbitron', sans-serif;
       margin: 0;
-      padding: 2rem;
+      padding: 2rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
     h1 {
-      margin-bottom: 1rem;
       text-align: center;
+      margin-bottom: 2rem;
     }
 
     .results-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.2rem;
-      width: 100%;
-      max-width: 1000px;
+      gap: 2rem;
+      max-width: 1400px;
     }
 
     .result-item {
-      background-color: #111;
-      border-radius: 10px;
-      padding: 0.75rem;
-      max-width: 220px;
-      width: 100%;
+      cursor: pointer;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(255,255,255,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #111;
+      padding: 1rem;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 250px;
     }
 
     .result-item:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+      transform: scale(1.05);
+      box-shadow: 0 4px 14px rgba(255,255,255,0.2);
     }
 
     .result-item img {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
+      height: 375px;
       object-fit: cover;
+      border-radius: 10px;
     }
 
     .caption {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
+      margin-top: 0.8rem;
+      font-size: 1rem;
       color: #ccc;
-      user-select: none;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .result-item {
-        max-width: 90%;
+        width: 85vw;
+      }
+      .result-item img {
+        height: auto;
       }
     }
   </style>
@@ -74,39 +73,45 @@
   <div class="results-container" id="results"></div>
 
   <script>
-    const movies = [
-      { title: "Iron-Man", keywords: ["Iron", "Man", "-", "iron man", "iron-man"], image: "Iron-Man.jpg", link: "Iron-Man.html" },
-      { title: "Iron-Man 2", keywords: ["Iron", "Man", "-", "2", "Iron man", "iron man", "iron man 2", "Iron-Man 2"], image: "Iron-Man 2.jpg", link: "Iron-Man 2.html" },
-      { title: "The Incredible Hulk", keywords: ["The", "Incredible", "Hulk"], image: "The Incredible Hulk.jpg", link: "The Incredible Hulk.html" },
-      { title: "Thor", keywords: ["thor", "Thor"], image: "Thor.jpg", link: "Thor.html" },
-      { title: "The Batman", keywords: ["the batman", "bat", "man", "the", "batman"], image: "The Batman 2022.jpg", link: "The Batman_2022.html" },
-      { title: "The Amazing Spider-Man", keywords: ["the amazing spider-man", "the amazing spiderman", "spiderman", "spider-man", "spider", "man", "the"], image: "The Amazing Spider-Man.jpg", link: "The Amazing Spider-Man.html" },
-      { title: "Scream", keywords: ["Scream", "scream"], image: "Scream 1.jpg", link: "Scream 1.html"},
-      { title: "Pineapple Express", keywords: ["pineaplle express", "pineapple", "express", "pine", "apple"], image: "Pineapple Express.jpg", link: "Pineapple Express.html"}
+    // Sample film data
+    const films = [
+      { title: "Iron-Man", keywords: ["iron man"], thumb: "Iron-Man.jpg", source: "https://adilo.bigcommand.com/watch/kamF0P31"},
+      { title: "The Incredible Hulk", keywords: ["the incredible hulk"], thumb: "The Incredible Hulk.jpg", source: "https://adilo.bigcommand.com/watch/hWfzr5g7"},
+      { title: "Iron-Man 2", keywords: ["iron man 2"], thumb: "Iron-Man 2.jpg", source: "https://adilo.bigcommand.com/watch/8GgrFjZi"},
+      { title: "Thor", keywords: ["thor"], thumb: "Thor.jpg", source: "https://adilo.bigcommand.com/watch/YLTs5vT_"},
+      { title: "The Batman", keywords: ["the batman"], thumb: "The Batman 2022.jpg", source: "https://adilo.bigcommand.com/watch/FH1cKejq"},
+      { title: "The Amazing Spider-Man", keywords: ["the amazing spider man"], thumb: "The Amazing Spider-Man.jpg", source: "https://adilo.bigcommand.com/watch/2ms84cBj"},
+      { title: "Scream", keywords: ["scream"], thumb: "Scream 1.jpg", source: "https://adilo.bigcommand.com/watch/0AYqWb9o"},
+      { title: "Pineapple Express", keywords: ["pineapple express"], thumb: "Pineapple Express.jpg", source: "https://adilo.bigcommand.com/watch/gq1sBlv4"},
+
+      
+      // Add more films here
     ];
 
     const params = new URLSearchParams(window.location.search);
-    const query = params.get("query")?.toLowerCase();
-
-    const results = movies.filter(movie =>
-      movie.title.toLowerCase().includes(query) ||
-      movie.keywords.some(kw => kw.includes(query))
-    );
-
+    const q = params.get("query")?.toLowerCase();
     const container = document.getElementById("results");
 
-    if (results.length === 0) {
-      container.innerHTML = `<p>No results found for "<strong>${query}</strong>".</p>`;
+    const matches = q
+      ? films.filter(f => f.title.toLowerCase().includes(q) || f.keywords.some(k => k.includes(q)))
+      : films;
+
+    if (matches.length === 0) {
+      container.innerHTML = `<p>No results found for "<strong>${q}</strong>"</p>`;
     } else {
-      results.forEach(movie => {
-        container.innerHTML += `
-          <div class="result-item">
-            <a href="${movie.link}">
-              <img src="${movie.image}" alt="${movie.title}" />
-            </a>
-            <div class="caption">${movie.title}</div>
-          </div>
+      matches.forEach(film => {
+        const div = document.createElement("div");
+        div.className = "result-item";
+        div.innerHTML = `
+          <img src="${film.thumb}" alt="${film.title}">
+          <div class="caption">${film.title}</div>
         `;
+        div.onclick = () => {
+          localStorage.setItem("GLOBAL_SRC", film.source);
+          localStorage.setItem("documentName", film.title)
+          window.location.href = "movie.html";
+        };
+        container.appendChild(div);
       });
     }
   </script>

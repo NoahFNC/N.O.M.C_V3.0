@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>N.O.M.C Player</title>
+  <link rel="icon" href="NOMC Logo.ico" type="image/ico" />
+  <script>
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const season = urlParams.get("season");
+      const episode = urlParams.get("ep");
+
+      const videoLinks = {
+        "1": {
+          "1": "https://adilo.bigcommand.com/watch/qvYSgaUf",
+          "2": "https://adilo.bigcommand.com/watch/Bk8K7gz3",
+          "3": "https://adilo.bigcommand.com/watch/KFAZv8kx"
+        },
+        "2": {
+          "1": "https://example.com/season2-ep1",
+          "2": "https://example.com/season2-ep2",
+          "3": "https://example.com/season2-ep3"
+        }
+        // Add more seasons/episodes here
+      };
+
+      const iframe = document.getElementById("videoPlayer");
+
+      if (videoLinks[season] && videoLinks[season][episode]) {
+        iframe.src = videoLinks[season][episode];
+      } else {
+        iframe.src = "https://example.com/default";
+      }
+    };
+  </script>
+</head>
+
+<body style="margin: 0; padding: 0;">
+  <iframe
+    id="videoPlayer"
+    allowtransparency="true"
+    style="object-fit: cover; position: fixed; border: none; width: 100vw; height: 100vh; padding: 0; margin: 0;"
+    src=""
+    frameborder="0"
+    allowfullscreen
+    mozallowfullscreen
+    webkitallowfullscreen
+    oallowfullscreen
+    msallowfullscreen
+    scrolling="yes"
+  ></iframe>
+</body>
+</html>
+

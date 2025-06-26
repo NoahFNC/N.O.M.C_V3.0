@@ -6,6 +6,7 @@
     <title>N.O.M.C_V3.0</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
     <link rel="icon" href="NOMC Logo.ico" type="image/ico">
+    <script src="Movie_SRC.JS"></script>
   <style>
     /* Reset */
     * {
@@ -227,7 +228,7 @@
       
       <div class="sidebar-category">DC</div>
       <div class="category-group">
-        <a href="drama1.html" target="_self" rel="noopener">
+        <a href="DC.html" target="_self" rel="noopener">
           <img src="DC Icon.png" alt="DC" />
         </a>
       </div>
@@ -246,58 +247,136 @@
         <h1>N.O.M.C</h1>
         <p>Noah's Own Media Center</p>
       </div>
-
+      <!--Iron-Man(2008)-->
       <div class="image-gallery">
-        <div class="image-item">
-          <a href="Iron-Man.html" target="_self" rel="noopener">
+        <div class="image-item" id="Iron_Man_Button">
+          <a href="Movie.html" target="_self" rel="noopener">
             <img src="Iron-Man.jpg" alt="Iron-Man" />
           </a>
           <p class="image-caption">Iron-Man</p>
         </div>
-        <div class="image-item">
-          <a href="The Incredible Hulk.html" target="_self" rel="noopener">
+        <!--The Incredible Hulk(2008)-->
+        <div class="image-item" id="The_Incredible_Hulk">
+          <a href="Movie.html" target="_self" rel="noopener">
             <img src="The Incredible Hulk.jpg" alt="The Incredible Hulk" />
           </a>
           <p class="image-caption">The Incredible Hulk</p>
       </div>
-        <div class="image-item">
-          <a href="Iron-Man 2.html" target="_self" rel="noopener">
+      <!--Iron-Man 2(2010)-->
+        <div class="image-item" id="Iron_Man_2_Button">
+          <a href="Movie.html" target="_self" rel="noopener">
             <img src="Iron-Man 2.jpg" alt="Iron-Man 2" />
           </a>
           <p class="image-caption">Iron-Man 2</p>
       </div>
-      <div class="image-item">
-          <a href="Thor.html" target="_self" rel="noopener">
+      <!--Thor-->
+      <div class="image-item" id="Thor">
+          <a href="Movie.html" target="_self" rel="noopener">
             <img src="Thor.jpg" alt="Thor" />
           </a>
           <p class="image-caption">Thor</p>
       </div>
-      <div class="image-item">
-          <a href="The Batman_2022.html" target="_self" rel="noopener">
+      <!--The Batman(2022)-->
+      <div class="image-item" id="The_Batman_2022">
+          <a href="Movie.html" target="_self" rel="noopener">
             <img src="The Batman 2022.jpg" alt="The Batman_2022" />
           </a>
           <p class="image-caption">The Batman</p>
       </div>
-      <div class="image-item">
-          <a href="The Amazing Spider-Man.html" target="_self" rel="noopener">
+      <!--The Amazing Spider-Man-->
+      <div class="image-item" id="The_Amazing_Spider_Man">
+          <a href="Movie.html" target="_self" rel="noopener">
             <img src="The Amazing Spider-Man.jpg" alt="The Amazing Spider-Man" />
           </a>
           <p class="image-caption">The Amazing Spider-Man</p>
       </div>
-      <div class="image-item">
-          <a href="Scream 1.html" target="_self" rel="noopener">
+      <!--Scream-->
+      <div class="image-item" id="Scream">
+          <a href="Movie.html" target="_self" rel="noopener">
             <img src="Scream 1.jpg" alt="Scream" />
           </a>
           <p class="image-caption">Scream</p>
       </div>
-      <div class="image-item">
-          <a href="Pineapple Express.html" target="_self" rel="noopener">
+      <!--Pineapple Express-->
+      <div class="image-item" id="Pineapple_Express">
+          <a href="Movie.html" target="_self" rel="noopener">
             <img src="Pineapple Express.jpg" alt="Pineapple Express" />
           </a>
           <p class="image-caption">Pineapple Express</p>
+      </div>
+      <!--Gotham-->
+      <div class="image-item">
+          <a href="Gotham.html" target="_self" rel="noopener">
+            <img src="Gotham.jpg" alt="Gotham" />
+          </a>
+          <p class="image-caption">Gotham</p>
       </div>
       
     </main>
   </div>
 </body>
+<script>
+  //Iron-Man(2008)
+  const Iron_Man_Button = document.getElementById('Iron_Man_Button')
+  const Iron_Man_src = "https://adilo.bigcommand.com/watch/kamF0P31"
+  Iron_Man_Button.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Iron_Man_src);
+    localStorage.setItem('documentName', "Iron-Man")
+  });
+
+  //The Incredible Hulk(2008)
+  const The_Incredible_Hulk_Button = document.getElementById('The_Incredible_Hulk')
+  const The_Incredible_Hulk_src = "https://adilo.bigcommand.com/watch/hWfzr5g7"
+  The_Incredible_Hulk_Button.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', The_Incredible_Hulk_src);
+    localStorage.setItem('documentName', "The Incredible Hulk")
+  });
+  //Iron-Man 2
+  const Iron_Man_2_Button = document.getElementById('Iron_Man_2_Button')
+  const Iron_Man_2_src = "https://adilo.bigcommand.com/watch/8GgrFjZi"
+  Iron_Man_2_Button.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Iron_Man_2_src);
+    localStorage.setItem('documentName', "Iron-Man 2")
+  });
+  //Thor
+  const Thor_Button = document.getElementById('Thor')
+  const Thor_src = "https://adilo.bigcommand.com/watch/YLTs5vT_"
+  Thor_Button.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Thor_src);
+    localStorage.setItem('documentName', "Thor")
+  });
+  //The Batman 2022
+  const The_Batman_2022 = document.getElementById('The_Batman_2022')
+  const The_Batman_2022_src = "https://adilo.bigcommand.com/watch/FH1cKejq"
+  The_Batman_2022.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', The_Batman_2022_src);
+    localStorage.setItem('documentName', "The Batman")
+  });
+  //The Amazing Spider-Man
+  const The_Amazing_Spider_Man = document.getElementById('The_Amazing_Spider_Man')
+  const The_Amazing_Spider_Man_src = "https://adilo.bigcommand.com/watch/2ms84cBj"
+  The_Amazing_Spider_Man.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', The_Amazing_Spider_Man_src);
+    localStorage.setItem('documentName', "The Amazing Spider-Man")
+  });
+  //Scream
+  const Scream = document.getElementById('Scream')
+  const Scream_src = "https://adilo.bigcommand.com/watch/0AYqWb9o"
+  Scream.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Scream_src);
+    localStorage.setItem('documentName', "Scream")
+  });
+  //Pineapple Express
+  const Pineapple_Express = document.getElementById("Pineapple_Express")
+  const Pineapple_Express_src = "https://adilo.bigcommand.com/watch/gq1sBlv4"
+  Pineapple_Express.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Pineapple_Express_src)
+    localStorage.setItem('documentname', "Pineaplle Express")
+  })
+
+
+
+
+
+</script>
 </html>

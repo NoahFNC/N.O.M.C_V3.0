@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Marvel Category</title>
+  <title>DC Category</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
   <link rel="icon" href="NOMC Logo.ico" type="image/ico">
   <style>
@@ -15,10 +15,10 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        background-image: url('Marvel Background.png');
-        background-repeat: repeat;
-        background-position: top left;
-        background-size: 500px 500px;
+        background-image: url('DC Background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .container {
@@ -94,7 +94,7 @@
     }
 
     .movie-header img {
-      width: 300px;
+      width: 500px;
       max-width: 90%;
       margin-bottom: 2rem;
     }
@@ -179,8 +179,8 @@
       
       <div class="sidebar-category">DC</div>
       <div class="category-group">
-        <a href="DC.html" target="_self" rel="noopener">
-          <img src="DC Icon.png" alt="DC" />
+        <a href="Marvel.html" target="_self" rel="noopener">
+          <img src="Marvel Icon.png" alt="Marvel" />
         </a>
       </div>
       
@@ -202,41 +202,24 @@
 
       <!-- Header Image -->
       <div class="movie-header">
-        <img src="Marvel_Logo.png" alt="NOMC Header" />
+        <img src="DC Logo.png" alt="NOMC Header" />
       </div>
 
       <!-- Movie Box -->
       <div class="movie-box">
-        <div class="movie-item" id="Iron_Man_Button">
+        <div class="movie-item" id="The_Batman_2022">
             <a href="Movie.html">
-            <img src="Iron-Man.jpg" alt="Iron-Man" />
+            <img src="The Batman 2022.jpg" alt="The Batman 2022" />
             </a>
-            <p class="image-caption">Iron-Man</p>
+            <p class="image-caption">The Batman</p>
         </div>
-        <div class="movie-item" id="The_Incredible_Hulk">
-            <a href="Movie.html">
-            <img src="The Incredible Hulk.jpg" alt="The Incredible Hulk" />
+        <div class="movie-item">
+            <a href="Gotham.html">
+            <img src="Gotham.jpg" alt="Gotham" />
             </a>
-            <p class="image-caption">The Incredible Hulk</p>
+            <p class="image-caption">Gotham</p>
         </div>
-        <div class="movie-item" id="Iron_Man_2_Button">
-            <a href="Movie.html">
-            <img src="Iron-Man 2.jpg" alt="Iron-Man 2" />
-            </a>
-            <p class="image-caption">Iron-Man 2</p>
-        </div>
-        <div class="movie-item" id="Thor">
-            <a href="Movie.html">
-            <img src="Thor.jpg" alt="Thor" />
-            </a>
-            <p class="image-caption">Thor</p>
-        </div>
-        <div class="movie-item" id="The_Amazing_Spider_Man">
-            <a href="Movie.html">
-            <img src="The Amazing Spider-Man.jpg" alt="The Amazing Spider-Man" />
-            </a>
-            <p class="image-caption">The Amazing Spider-Man</p>
-        </div>
+        
     </div>
   <script>
     function handleSearch() {
@@ -248,42 +231,12 @@
     }
   </script>
   <script>
-    //Iron-Man(2008)
-    const Iron_Man_Button = document.getElementById('Iron_Man_Button')
-    const Iron_Man_src = "https://adilo.bigcommand.com/watch/kamF0P31"
-    Iron_Man_Button.addEventListener('click', function(){
-      localStorage.setItem('GLOBAL_SRC', Iron_Man_src);
-      localStorage.setItem('documentName', "Iron-Man")
-    });
-
-    //The Incredible Hulk(2008)
-    const The_Incredible_Hulk_Button = document.getElementById('The_Incredible_Hulk')
-    const The_Incredible_Hulk_src = "https://adilo.bigcommand.com/watch/hWfzr5g7"
-    The_Incredible_Hulk_Button.addEventListener('click', function(){
-      localStorage.setItem('GLOBAL_SRC', The_Incredible_Hulk_src);
-      localStorage.setItem('documentName', "The Incredible Hulk")
-    });
-    //Iron-Man 2
-    const Iron_Man_2_Button = document.getElementById('Iron_Man_2_Button')
-    const Iron_Man_2_src = "https://adilo.bigcommand.com/watch/8GgrFjZi"
-    Iron_Man_2_Button.addEventListener('click', function(){
-      localStorage.setItem('GLOBAL_SRC', Iron_Man_2_src);
-      localStorage.setItem('documentName', "Iron-Man 2")
-    });
-    //Thor
-    const Thor_Button = document.getElementById('Thor')
-    const Thor_src = "https://adilo.bigcommand.com/watch/YLTs5vT_"
-    Thor_Button.addEventListener('click', function(){
-      localStorage.setItem('GLOBAL_SRC', Thor_src);
-      localStorage.setItem('documentName', "Thor")
-    });
-  
-    //The Amazing Spider-Man
-    const The_Amazing_Spider_Man = document.getElementById('The_Amazing_Spider_Man')
-    const The_Amazing_Spider_Man_src = "https://adilo.bigcommand.com/watch/2ms84cBj"
-    The_Amazing_Spider_Man.addEventListener('click', function(){
-      localStorage.setItem('GLOBAL_SRC', The_Amazing_Spider_Man_src);
-      localStorage.setItem('documentName', "The Amazing Spider-Man")
+    //The Batman 2022
+    const The_Batman_2022 = document.getElementById('The_Batman_2022')
+    const The_Batman_2022_src = "https://adilo.bigcommand.com/watch/FH1cKejq"
+    The_Batman_2022.addEventListener('click', function(){
+        localStorage.setItem('GLOBAL_SRC', The_Batman_2022_src);
+        localStorage.setItem('documentName', "The Batman")
     });
   </script>
 </body>

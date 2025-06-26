@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movie Name</title>
+    <link rel="icon" href="NOMC Logo.ico" type="image/ico">
+    <script src="Movie_SRC.JS"></script>
+</head>
+<body style="margin: 0%; padding: 0%;"><iframe id="IFRAME" allowtransparency="true"; style="object-fit: cover; position: fixed; border: none; width: 100vw; height: 100vh; padding: 0%; margin: 0%;" src="https://adilo.bigcommand.com/watch/kamF0P31 "  frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen scrolling="yes"></iframe>
+</body>
+<script>
+
+    const VIDELEMENT = document.getElementById("IFRAME")
+    const VidSRC = localStorage.getItem('GLOBAL_SRC')
+    const documentTitle = localStorage.getItem('documentName')
+
+    VIDELEMENT.src = VidSRC
+    document.title = documentTitle
+</script>
+</html>
