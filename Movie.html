@@ -9,7 +9,7 @@
 </head>
 
 <body style="margin: 0%; padding: 0%;">
-    <button id="btnn" style="position: fixed; z-index: 1; width:10vw; height: 10vh;">Fullscreen?</button>
+    <button id="btn" style="position: fixed; z-index: 1; width:10vw; height: 10vh;">Fullscreen?</button>
     <iframe id="IFRAME" style="object-fit: cover; position: fixed; z-index: -1; border: none; width: 100vw; height: 100vh; padding: 0%; margin: 0%;" src="https://adilo.bigcommand.com/watch/kamF0P31 "  frameborder="0" allowfullscreen allow="fullscreen" scrolling="yes"></iframe>
 </body>
 <script>
@@ -21,7 +21,7 @@
     VIDELEMENT.src = VidSRC
     document.title = documentTitle
 
-    const btn = document.getElementById('btnn')
+    const btn = document.getElementById('btn')
 
     btn.addEventListener('click', function(){
         VIDELEMENT.requestFullscreen()
