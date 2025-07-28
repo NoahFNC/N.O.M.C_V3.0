@@ -159,9 +159,12 @@
         overflow-y: hidden;
         border-right: none;
         border-bottom: 2px solid #222;
+        color: white;
       }
       .sidebar-category {
+
         display: none;
+        color: white;
       }
     }
   </style>
@@ -213,12 +216,21 @@
             </a>
             <p class="image-caption">The Batman</p>
         </div>
+
         <div class="movie-item">
             <a href="Gotham.html">
             <img src="Gotham.jpg" alt="Gotham" />
             </a>
             <p class="image-caption">Gotham</p>
         </div>
+
+        <div class="movie-item" id="Superman_2025">
+          <a href="Movie.html" target="_self" rel="noopener">
+            <img src="https://image.tmdb.org/t/p/original/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg" alt="Superman 2025" />
+          </a>
+          <p class="image-caption">Superman 2025</p>
+      </div>
+        
         
     </div>
   <script>
@@ -238,6 +250,14 @@
         localStorage.setItem('GLOBAL_SRC', The_Batman_2022_src);
         localStorage.setItem('documentName', "The Batman")
     });
+
+  //Superman 2025
+  const Superman_2025 = document.getElementById("Superman_2025")
+  const Superman_2025_src = "https://vidsrc.cc/v3/embed/movie/1061474"
+  Superman_2025.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Superman_2025_src)
+    localStorage.setItem('documentname', "Superman")
+  })
   </script>
 </body>
 </html>

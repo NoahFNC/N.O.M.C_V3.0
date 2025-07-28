@@ -45,6 +45,7 @@
       margin-bottom: 0.5rem;
       border-bottom: 1px solid #444;
       padding-bottom: 0.3rem;
+      color: white;
     }
 
     .category-group {
@@ -209,7 +210,7 @@
       <div class="movie-box">
         <div class="movie-item" id="Iron_Man_Button">
             <a href="Movie.html">
-            <img src="Iron-Man.jpg" alt="Iron-Man" />
+            <img src="https://image.tmdb.org/t/p/original/78lPtwv72eTNqFW9COBYI0dWDJa.jpg" alt="Iron-Man" />
             </a>
             <p class="image-caption">Iron-Man</p>
         </div>
@@ -231,6 +232,12 @@
             </a>
             <p class="image-caption">Thor</p>
         </div>
+        <div class="movie-item" id="Captain_America_The_First_Avenger">
+          <a href="Movie.html">
+            <img src="https://image.tmdb.org/t/p/original/vSNxAJTlD0r02V9sPYpOjqDZXUK.jpg" alt="Captain America The First Avenger" />
+          </a>
+          <p class="image-caption">Captain America The First Avenger</p>
+      </div>
         <div class="movie-item" id="The_Amazing_Spider_Man">
             <a href="Movie.html">
             <img src="The Amazing Spider-Man.jpg" alt="The Amazing Spider-Man" />
@@ -277,6 +284,14 @@
       localStorage.setItem('GLOBAL_SRC', Thor_src);
       localStorage.setItem('documentName', "Thor")
     });
+
+  //Captain America The First Avenger
+  const Captain_America_The_First_Avenger_Button = document.getElementById('Captain_America_The_First_Avenger')
+  const Captain_America_The_First_Avenger_src = "https://vidsrc.cc/v3/embed/movie/1771"
+  Captain_America_The_First_Avenger_Button.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Captain_America_The_First_Avenger_src);
+    localStorage.setItem('documentName', "Captain America The First Avenger")
+  });
   
     //The Amazing Spider-Man
     const The_Amazing_Spider_Man = document.getElementById('The_Amazing_Spider_Man')
