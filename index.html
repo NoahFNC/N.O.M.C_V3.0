@@ -325,6 +325,13 @@
           </a>
           <p class="image-caption">The Fantastic 4: First Steps</p>
       </div>
+      <!--Dances With Wolves-->
+      <div class="image-item" id="Dances_With_Wolves">
+          <a href="Movie.html" target="_self" rel="noopener">
+            <img src="https://image.tmdb.org/t/p/original/AqhFSd5J3OPz24BGrWL7HK7brt.jpg" alt="Dances With Wolves" />
+          </a>
+          <p class="image-caption">Dances With Wolves</p>
+      </div>
       <!--Gotham-->
       <div class="image-item">
           <a href="Gotham.html" target="_self" rel="noopener">
@@ -421,6 +428,13 @@
   The_Fantastic_4_First_Steps.addEventListener('click', function(){
     localStorage.setItem('GLOBAL_SRC', The_Fantastic_4_First_Steps_src)
     localStorage.setItem('documentname', "The Fantastic 4: First Steps")
+  })
+  //Dances With Wolves
+  const Dances_With_Wolves = document.getElementById("Dances_With_Wolves")
+  const Dances_With_Wolves_src = "https://vidsrc.cc/v3/embed/movie/581"
+  Dances_With_Wolves.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Dances_With_Wolves_src)
+    localStorage.setItem('documentname', "Dances With Wolves")
   })
 
 
