@@ -311,6 +311,13 @@
           </a>
           <p class="image-caption">Pineapple Express</p>
       </div>
+      <!--Superman_2025-->
+      <div class="image-item" id="Superman_2025">
+          <a href="Movie.html" target="_self" rel="noopener">
+            <img src="https://image.tmdb.org/t/p/original/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg" alt="Superman 2025" />
+          </a>
+          <p class="image-caption">Superman 2025</p>
+      </div>
       <!--Gotham-->
       <div class="image-item">
           <a href="Gotham.html" target="_self" rel="noopener">
@@ -386,6 +393,13 @@
   Pineapple_Express.addEventListener('click', function(){
     localStorage.setItem('GLOBAL_SRC', Pineapple_Express_src)
     localStorage.setItem('documentname', "Pineapple Express")
+  })
+  //Superman 2025
+  const Superman_2025 = document.getElementById("Superman_2025")
+  const Superman_2025_src = "https://vidsrc.cc/v3/embed/movie/1061474"
+  Superman_2025.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Superman_2025_src)
+    localStorage.setItem('documentname', "Superman")
   })
 
 
