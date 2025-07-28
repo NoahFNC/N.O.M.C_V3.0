@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Squid Games Episodes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #000;
+      color: white;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .show-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #fff;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+    }
+
+    .poster {
+      max-width: 400px;
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    .season-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1rem;
+      max-width: 600px;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .season-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      text-align: center;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+    }
+
+    .button-grid {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .ep-button {
+      background-color: #1e1e1e;
+      border: 2px solid #444;
+      color: white;
+      text-decoration: none;
+      padding: 1rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .ep-button:hover {
+      background-color: #333;
+      transform: scale(1.05);
+      border-color: #666;
+    }
+
+    @media (max-width: 600px) {
+      .poster { max-width: 90%; }
+      .ep-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="show-title">Squid Games</h1>
+  <img src="https://image.tmdb.org/t/p/original/onV0JoOJeiUHG1rfpB2lFTVw1vN.jpg" alt="Squid Games" class="poster" />
+
+  <!-- Season 1 -->
+  <div class="season-box">
+    <div class="season-title" onclick="toggleSeason('season1')">Season 1</div>
+    <div class="button-grid" id="season1">
+      <a href="Squid Games Episode.html?season=1&ep=1" class="ep-button">1</a>
+      <a href="Squid Games Episode.html?season=1&ep=2" class="ep-button">2</a>
+      <a href="Squid Games Episode.html?season=1&ep=3" class="ep-button">3</a>
+      <a href="Squid Games Episode.html?season=1&ep=4" class="ep-button">4</a>
+      <a href="Squid Games Episode.html?season=1&ep=5" class="ep-button">5</a>
+      <a href="Squid Games Episode.html?season=1&ep=6" class="ep-button">6</a>
+      <a href="Squid Games Episode.html?season=1&ep=7" class="ep-button">7</a>
+      <a href="Squid Games Episode.html?season=1&ep=8" class="ep-button">8</a>
+      <a href="Squid Games Episode.html?season=1&ep=9" class="ep-button">9</a>
+    </div>
+  </div>
+  <!-- Season 2 -->
+  <div class="season-box">
+    <div class="season-title" onclick="toggleSeason('season2')">Season 2</div>
+    <div class="button-grid" id="season2">
+      <a href="Squid Games Episode.html?season=2&ep=1" class="ep-button">⚠️</a>
+      <a href="Squid Games Episode.html?season=2&ep=2" class="ep-button">2</a>
+      <a href="Squid Games Episode.html?season=2&ep=3" class="ep-button">3</a>
+      <a href="Squid Games Episode.html?season=2&ep=4" class="ep-button">4</a>
+      <a href="Squid Games Episode.html?season=2&ep=5" class="ep-button">5</a>
+      <a href="Squid Games Episode.html?season=2&ep=6" class="ep-button">6</a>
+      <a href="Squid Games Episode.html?season=2&ep=7" class="ep-button">7</a>
+      
+    </div>
+  </div>
+
+  
+  <script>
+    function toggleSeason(id) {
+      const grid = document.getElementById(id);
+      grid.style.display = grid.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+
+</body>
+</html>
