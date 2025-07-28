@@ -250,6 +250,12 @@
           </a>
           <p class="image-caption">The Fantastic 4: First Steps</p>
       </div>
+      <div class="movie-item" id="Deadpool_And_Wolverine">
+          <a href="Movie.html" target="_self" rel="noopener">
+            <img src="https://image.tmdb.org/t/p/original/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine" />
+          </a>
+          <p class="image-caption">Deadpool & Wolverine</p>
+      </div>
     </div>
   <script>
     function handleSearch() {
@@ -312,6 +318,13 @@
   The_Fantastic_4_First_Steps.addEventListener('click', function(){
     localStorage.setItem('GLOBAL_SRC', The_Fantastic_4_First_Steps_src)
     localStorage.setItem('documentname', "The Fantastic 4: First Steps")
+  })
+  //Deadpool & Wolverine
+  const Deadpool_And_Wolverine = document.getElementById("Deadpool_And_Wolverine")
+  const Deadpool_And_Wolverine_src = "https://vidsrc.cc/v3/embed/movie/533535"
+  Deadpool_And_Wolverine.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Deadpool_And_Wolverine_src)
+    localStorage.setItem('documentname', "Deadpool & Wolverine")
   })
   </script>
 </body>

@@ -332,6 +332,13 @@
           </a>
           <p class="image-caption">Dances With Wolves</p>
       </div>
+      <!--Deadpool & Wolverine-->
+      <div class="image-item" id="Deadpool_And_Wolverine">
+          <a href="Movie.html" target="_self" rel="noopener">
+            <img src="https://image.tmdb.org/t/p/original/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine" />
+          </a>
+          <p class="image-caption">Deadpool & Wolverine</p>
+      </div>
       <!--Gotham-->
       <div class="image-item">
           <a href="Gotham.html" target="_self" rel="noopener">
@@ -435,6 +442,13 @@
   Dances_With_Wolves.addEventListener('click', function(){
     localStorage.setItem('GLOBAL_SRC', Dances_With_Wolves_src)
     localStorage.setItem('documentname', "Dances With Wolves")
+  })
+  //Deadpool & Wolverine
+  const Deadpool_And_Wolverine = document.getElementById("Deadpool_And_Wolverine")
+  const Deadpool_And_Wolverine_src = "https://vidsrc.cc/v3/embed/movie/533535"
+  Deadpool_And_Wolverine.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', Deadpool_And_Wolverine_src)
+    localStorage.setItem('documentname', "Deadpool & Wolverine")
   })
 
 
