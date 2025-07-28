@@ -244,6 +244,12 @@
             </a>
             <p class="image-caption">The Amazing Spider-Man</p>
         </div>
+        <div class="movie-item" id="The_Fantastic_4_First_Steps">
+          <a href="Movie.html" target="_self" rel="noopener">
+            <img src="https://image.tmdb.org/t/p/original/x26MtUlwtWD26d0G0FXcppxCJio.jpg" alt="The The Fantastic 4 First Steps" />
+          </a>
+          <p class="image-caption">The Fantastic 4: First Steps</p>
+      </div>
     </div>
   <script>
     function handleSearch() {
@@ -300,6 +306,13 @@
       localStorage.setItem('GLOBAL_SRC', The_Amazing_Spider_Man_src);
       localStorage.setItem('documentName', "The Amazing Spider-Man")
     });
+    //The Fantastic 4: First Steps
+  const The_Fantastic_4_First_Steps = document.getElementById("The_Fantastic_4_First_Steps")
+  const The_Fantastic_4_First_Steps_src = "https://vidsrc.cc/v3/embed/movie/617126"
+  The_Fantastic_4_First_Steps.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', The_Fantastic_4_First_Steps_src)
+    localStorage.setItem('documentname', "The Fantastic 4: First Steps")
+  })
   </script>
 </body>
 </html>
