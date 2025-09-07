@@ -1,17 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
+  <meta charset="UTF-8">
+    
+
+  <title>Play Video in iframe</title>
 </head>
-<body>
-    <div style="position:relative;aspect-ratio:16/9;">
-      <iframe 
-            loading="lazy" title="Gumlet video player"
-            src="https://play.gumlet.io/embed/6857107edb962067e0cee550"
-            style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
-          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
-    </div>
+<body id="body">
+   <iframe src="https://vidnest.fun/movie/24428" id="IFRAME" allowfullscreen="true" title="Series Stream" loading="lazy" referrerpolicy="no-referrer" class="absolute top-0 left-0  rounded shadow-lg mb-3" style="pointer-events: auto; user-select: none; width: 1000px;" ></iframe>
+
+
 </body>
+
+<script>
+  
+
+setTimeout(function(){
+
+    ///var IFRAME = document.getElementById('IFRAME')
+
+    IFRAME.removeAttribute("sandbox")
+    ///IFRAME.setAttribute('src', "...")
+    ///IFRAME.setAttribute('src', " https://vidlink.pro/movie/24428?player=jw&amp;nextbutton=true")
+    setTimeout(function(){
+      IFRAME.setAttribute('sandbox', "allow-scripts")
+    }, 1)
+    
+
+
+
+    document.bgColor = "black"
+
+  }, 5000
+  )
+  
+
+
+  
+</script>
 </html>
