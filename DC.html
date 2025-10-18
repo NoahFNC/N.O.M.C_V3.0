@@ -243,19 +243,21 @@
     }
   </script>
   <script>
+    const movieSRC = "https://vidsrc.cx/embed/movie/"
+
     //The Batman 2022
     const The_Batman_2022 = document.getElementById('The_Batman_2022')
-    const The_Batman_2022_src = "https://adilo.bigcommand.com/watch/FH1cKejq"
+    const The_Batman_2022_src = "414906"
     The_Batman_2022.addEventListener('click', function(){
-        localStorage.setItem('GLOBAL_SRC', The_Batman_2022_src);
+        localStorage.setItem('GLOBAL_SRC', movieSRC + The_Batman_2022_src);
         localStorage.setItem('documentName', "The Batman")
     });
 
   //Superman 2025
   const Superman_2025 = document.getElementById("Superman_2025")
-  const Superman_2025_src = "https://vidsrc.cc/v3/embed/movie/1061474"
+  const Superman_2025_src = "1061474"
   Superman_2025.addEventListener('click', function(){
-    localStorage.setItem('GLOBAL_SRC', Superman_2025_src)
+    localStorage.setItem('GLOBAL_SRC', movieSRC + Superman_2025_src)
     localStorage.setItem('documentname', "Superman")
   })
   </script>
