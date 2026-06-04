@@ -283,6 +283,13 @@
           </a>
           <p class="image-caption">Captain America The First Avenger</p>
       </div>
+      <!--The Avengers-->
+      <div class="image-item" id="The_Avengers">
+          <a href="Movie.html" target="_self" rel="noopener">
+            <img src="https://image.tmdb.org/t/p/original/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg" alt="The Avengers" />
+          </a>
+          <p class="image-caption">The Avengers</p>
+      </div>
       <!--The Batman(2022)-->
       <div class="image-item" id="The_Batman_2022">
           <a href="Movie.html" target="_self" rel="noopener">
@@ -358,7 +365,7 @@
   </div>
 </body>
 <script>
-  const movieSRC = "https://vidsrc.cx/embed/movie/"
+  const movieSRC = "https://vixsrc.to/movie/"
   //Iron-Man(2008)
   const Iron_Man_Button = document.getElementById('Iron_Man_Button')
   const Iron_Man_ID = "1726"
@@ -394,6 +401,13 @@
   Captain_America_The_First_Avenger_Button.addEventListener('click', function(){
     localStorage.setItem('GLOBAL_SRC', movieSRC + Captain_America_The_First_Avenger_src);
     localStorage.setItem('documentName', "Captain America The First Avenger")
+  });
+  //The Avengers
+  const The_Avengers_Button = document.getElementById('The_Avengers')
+  const The_Avengers_src = "24428"
+  The_Avengers_Button.addEventListener('click', function(){
+    localStorage.setItem('GLOBAL_SRC', movieSRC + The_Avengers_src);
+    localStorage.setItem('documentName', "The Avengers")
   });
   //The Batman 2022
   const The_Batman_2022 = document.getElementById('The_Batman_2022')
